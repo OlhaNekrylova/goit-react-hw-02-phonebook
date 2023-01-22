@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './Section/Section';
 import Phonebook from './Phonebook/Phonebook';
+import Filter from './Filter/Filter';
 import ContactsList from './ContactsList/ContactsList';
 // import { nanoid } from 'nanoid';
 
@@ -28,6 +29,7 @@ class App extends React.Component {
       </Section> 
       <Section
         title={'Contacts'}>
+        <Filter onChange={this.handleChange}/>
         <ContactsList 
           contacts={this.state.contacts} 
         />

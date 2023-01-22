@@ -6,10 +6,11 @@ import css from './ContactsList.module.css';
 const ContactsList = ({contacts}) => {
     return (
         <ul className={css.contactsList}>
-            {contacts.map(({name, id}) => (
+            {contacts.map(({ id, name, number }) => (
                 <Contact
                     key={id} 
                     name={name}
+                    number={number}
                 />
             ))}
         </ul>
