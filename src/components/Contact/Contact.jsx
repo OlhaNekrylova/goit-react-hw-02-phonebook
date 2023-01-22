@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types';
-// import { nanoid } from 'nanoid';
 import css from './Contact.module.css';
 
-const Contact = ({ id, name, number }) => {
-    // const id = nanoid();
+const Contact = ({ id, name, number, onDeleteContact }) => {
     return (
         <li 
             key={id}
             className={css.item}>
             <p className={css.info}>{name}: {number}</p>
+            <button
+                className={css.button}
+                type="button"
+                onClick={() => onDeleteContact(id)}
+            >
+            Delete
+            </button>
         </li>
     );
 };
@@ -16,7 +21,8 @@ const Contact = ({ id, name, number }) => {
 Contact.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,    
+    number: PropTypes.number.isRequired, 
+    onDeleteContact: PropTypes.func.isRequired,   
 };
 
 export default Contact;
