@@ -13,3 +13,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1, 
+h2 {
+  padding-left: 50px;
+  color: rgb(0, 115, 255);
+}
