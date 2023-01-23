@@ -15,16 +15,16 @@ class App extends React.Component {
     filter: '',
   };
 
-  addContact = (name, number) => {
+  addContact = ({name, number}) => {
     const { contacts } = this.state;
     const newContact = {
       id: nanoid(),
       name,
       number,
     }
-    if (contacts.find(contact => contact.name === newContact.name)) {
-      alert(`${newContact.name} is already in contacts.`)
-      return;
+    if (contacts.find(
+      contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
+        return alert(`${newContact.name} is already in contacts.`);
     }
 
     this.setState(({ contacts }) => ({
