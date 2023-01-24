@@ -5,8 +5,6 @@ import css from './ContactForm.module.css';
 
 class ContactForm extends React.Component {
     static propTypes = {
-        // name: PropTypes.string.isRequired,
-        // number: PropTypes.string.isRequired,
         onSubmit: PropTypes.func.isRequired,
     };
     
